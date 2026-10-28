@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-promo: var(--promo);
+  --color-promo-ink: var(--promo-ink);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-critical: var(--critical);
+  --color-critical-soft: var(--critical-soft);
+
+  /* Per-item accents — subjects, categories, list rows. */
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-peach: var(--peach);
+  --color-peach-soft: var(--peach-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+
+  --radius-card: 1rem;
+  --radius-tile: 0.75rem;
+
+  --shadow-card: 0 1px 2px rgb(16 16 24 / 0.04), 0 4px 16px -6px rgb(16 16 24 / 0.08);
+  --shadow-raised: 0 2px 4px rgb(16 16 24 / 0.05), 0 12px 32px -12px rgb(16 16 24 / 0.14);
+
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
+}
+
+/* Fonts are bundled, so there is no network request at build or run time. */
+:root {
+  --font-sans-stack: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono-stack: "Geist Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --canvas: #f6f6f8;
+  --surface: #ffffff;
+  --surface-muted: #f3f3f6;
+  --line: #ecebf0;
+  --line-strong: #dedce5;
+  --ink: #1a1a22;
+  --ink-muted: #63636f;
+  --ink-faint: #9494a1;
+
+  --promo: #1b1b26;
+  --promo-ink: #f3f3f6;
+  --brand: #6d4aff;
+  --brand-soft: #f0ecff;
+  --positive: #0f9b63;
+  --positive-soft: #e6f6ef;
+  --warning: #b07410;
+  --warning-soft: #fdf2df;
+  --critical: #d2453f;
+  --critical-soft: #fdeceb;
+
+  --violet: #6d4aff;  --violet-soft: #f0ecff;
+  --sky: #1d7fd4;     --sky-soft: #e7f2fc;
+  --mint: #0f9b63;    --mint-soft: #e6f6ef;
+  --peach: #d2652a;   --peach-soft: #fdeee4;
+  --rose: #c8427f;    --rose-soft: #fcebf3;
+  --amber: #a97b10;   --amber-soft: #fbf2dc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  --canvas: #0e0e13;
+  --surface: #17171f;
+  --surface-muted: #1f1f29;
+  --line: #262633;
+  --line-strong: #373746;
+  --ink: #f3f3f6;
+  --ink-muted: #a3a3b3;
+  --ink-faint: #71718a;
+
+  --promo: #221d3d;
+  --promo-ink: #f3f3f6;
+  --brand: #a391ff;
+  --brand-soft: #241f45;
+  --positive: #45d49a;
+  --positive-soft: #10301f;
+  --warning: #e5b544;
+  --warning-soft: #332710;
+  --critical: #f2908b;
+  --critical-soft: #381c1c;
+
+  --violet: #a391ff;  --violet-soft: #241f45;
+  --sky: #6cb6f0;     --sky-soft: #142634;
+  --mint: #45d49a;    --mint-soft: #10301f;
+  --peach: #f0a070;   --peach-soft: #352114;
+  --rose: #ef8ab8;    --rose-soft: #35182a;
+  --amber: #e0bb5e;   --amber-soft: #302714;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px -6px rgb(0 0 0 / 0.5);
+    --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.45), 0 12px 32px -12px rgb(0 0 0 / 0.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #0e0e13;
+  --surface: #17171f;
+  --surface-muted: #1f1f29;
+  --line: #262633;
+  --line-strong: #373746;
+  --ink: #f3f3f6;
+  --ink-muted: #a3a3b3;
+  --ink-faint: #71718a;
+
+  --promo: #221d3d;
+  --promo-ink: #f3f3f6;
+  --brand: #a391ff;
+  --brand-soft: #241f45;
+  --positive: #45d49a;
+  --positive-soft: #10301f;
+  --warning: #e5b544;
+  --warning-soft: #332710;
+  --critical: #f2908b;
+  --critical-soft: #381c1c;
+
+  --violet: #a391ff;  --violet-soft: #241f45;
+  --sky: #6cb6f0;     --sky-soft: #142634;
+  --mint: #45d49a;    --mint-soft: #10301f;
+  --peach: #f0a070;   --peach-soft: #352114;
+  --rose: #ef8ab8;    --rose-soft: #35182a;
+  --amber: #e0bb5e;   --amber-soft: #302714;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px -6px rgb(0 0 0 / 0.5);
+  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.45), 0 12px 32px -12px rgb(0 0 0 / 0.6);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans-stack);
+  -webkit-font-smoothing: antialiased;
+}
+
+* { border-color: var(--line); }
+
+::selection { background: var(--brand-soft); color: var(--brand); }
